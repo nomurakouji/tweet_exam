@@ -1,0 +1,7 @@
+<%= form_with(model: Post.new) do |form| %>
+  <div class="post_tweet">
+    <%= form.label :tweet %>
+    <%= form.text_field :tweet %>
+  </div>
+  <%= form.submit %>
+<% end %>
