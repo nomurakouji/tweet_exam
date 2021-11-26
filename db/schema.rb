@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_11_26_141951) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
+    t.text "talk"
   end
 
 end
