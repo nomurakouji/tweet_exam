@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update]
+  before_action :set_post, only: [:edit, :update, :destroy]
   def index
     @posts = Post.all
   end
@@ -23,7 +23,12 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+  def confirm
+    @post = Post.find(post_params)
+  end
   def destroy
+    @post.destroy
+    redirect_to posts_path, notice:"つぶやきを削除しました！"
   end
   private
   def post_params
